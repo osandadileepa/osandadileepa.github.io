@@ -1,4 +1,4 @@
-# [Your Name]'s Personal Website
+# Osanda Wedamulla 's Personal Website
 
 Welcome to the repository for my personal website! This website serves as a portfolio showcasing my skills, projects, and experiences as a software developer with 8 years of experience in Java Spring, MySQL, and NoSQL databases.
 
@@ -13,31 +13,16 @@ I am a passionate software developer with a strong background in building scalab
 - **NoSQL Databases**: Leveraged for handling unstructured or semi-structured data efficiently.
 - *(Add any additional technologies or tools you use for frontend, deployment, etc.)*
 
-## Projects
-
-Here are some of the notable projects I've worked on:
-
-1. **Project Name**: Brief description.
-    - Technologies Used: Java Spring, MySQL, NoSQL.
-    - Link to GitHub Repository (if applicable).
-    - Any other relevant information.
-
-2. **Project Name**: Brief description.
-    - Technologies Used: Java Spring, MySQL, NoSQL.
-    - Link to GitHub Repository (if applicable).
-    - Any other relevant information.
-
-*(Add more projects as needed.)*
-
 ## Contact Me
 
-- **Email**: [Your Email Address]
-- **LinkedIn**: [Your LinkedIn Profile URL]
-- **Personal Website**: [Your Personal Website URL]
+- **Email**: osanda1989@gmail.com
+- **LinkedIn**: https://www.linkedin.com/in/osandadileepa
+- **Personal Website**: https://osandadileepa.github.io
 
 Feel free to reach out to me if you have any questions, collaboration opportunities, or just want to connect!
 
-## License
+## Dev
 
-This project is licensed under the [License Name] License - see the [LICENSE](LICENSE) file for details.
+- First install `browser sync` to see live development changes (`npm install browser-sync -g`)
+- Then go to the root of the project and enter `browser-sync start --server --files "**/*.html"`
 

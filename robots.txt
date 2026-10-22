@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://osandadileepa.github.io/sitemap.xml

@@ -1,27 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osanda Wedamulla | Software Engineer & Architect</title>
-    <meta name="description" content="Osanda Wedamulla - Senior Full Stack Software Engineer & Team Lead with 10+ years experience in Java, Spring Boot, Microservices, Kubernetes, and Cloud Architecture.">
+    <title>Osanda Wedamulla | Senior Software Engineer — Team Lead</title>
+    <meta name="description" content="Osanda Wedamulla — Senior Software Engineer & Team Lead. 10+ years architecting distributed Java backends, Kubernetes platforms and engineering teams. 10K+ txn/min, 99.9% uptime.">
+    <meta property="og:title" content="Osanda Wedamulla — Senior Software Engineer & Team Lead">
+    <meta property="og:description" content="I architect and lead the systems other engineers build on.">
     
-    <!-- Fonts -->
+    <!-- Fonts: Inter (UI/body) + JetBrains Mono (metrics, labels) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
-    <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/main.css">
     
     <!-- Favicon -->
@@ -37,1051 +28,389 @@
     </script>
 </head>
 <body>
-    <!-- Page Loader -->
-    <div class="page-loader" id="page-loader">
-        <div class="loader-content">
-            <div class="loader-spinner"></div>
-            <p class="loader-text">Loading Experience...</p>
-        </div>
-    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress"></span></div>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <span class="logo-bracket">&lt;</span>
-                <span class="logo-text">Osanda</span>
-                <span class="logo-bracket">/&gt;</span>
+            <a href="#top" class="nav-logo" aria-label="Osanda Wedamulla — home">
+                <span class="logo-bracket">&lt;</span><span class="logo-text">Osanda</span><span class="logo-bracket">/&gt;</span>
             </a>
             
             <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link active" data-section="home">Home</a>
-                <a href="#about" class="nav-link" data-section="about">About</a>
-                <a href="#resume" class="nav-link" data-section="resume">Resume</a>
-                <a href="#services" class="nav-link" data-section="services">Services</a>
-                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
-                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-                <a href="#contact" class="nav-link nav-cta" data-section="contact">Contact</a>
+                <a href="#work" class="nav-link" data-target="work">Work</a>
+                <a href="#systems" class="nav-link" data-target="systems">Systems</a>
+                <a href="#projects" class="nav-link" data-target="projects">Projects</a>
+                <a href="#contact" class="nav-link" data-target="contact">Contact</a>
+                <a href="files/CV_Osanda_Wedamulla_2026.pdf" class="btn btn-sm btn-primary nav-cv" download>
+                    CV
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </a>
             </div>
             
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light / dark theme">
+                    <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32 1.41-1.41"/></svg>
+                    <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <canvas class="hero-canvas" id="hero-canvas"></canvas>
-        <div class="hero-overlay"></div>
+    <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+        <div class="hero-bg" aria-hidden="true">
+            <div class="aurora aurora-1"></div>
+            <div class="aurora aurora-2"></div>
+            <div class="aurora aurora-3"></div>
+            <div class="dot-grid"></div>
+        </div>
         
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                <span class="badge-text">10+ Years Experience</span>
-            </div>
-            
-            <h1 class="hero-title">
-                <span class="title-line" data-text="Hello, I'm">Hello, I'm</span>
-                <span class="title-name" data-text="Osanda Wedamulla">Osanda Wedamulla</span>
-                <span class="title-role" data-text="Software Engineer & Architect">Software Engineer & Architect</span>
-            </h1>
-            
-            <p class="hero-description">
-                Architecting high-throughput microservices, leading engineering teams, and delivering 
-                cloud-native solutions with Java, Spring Boot, Kubernetes, and AI/ML integration. 
-                10+ years of experience in backend architecture, DevOps automation, and scalable system design.
+        <div class="hero-inner container">
+            <p class="hero-kicker mono-label reveal" data-reveal>
+                <span class="kicker-dot" aria-hidden="true"></span>
+                Senior Software Engineer · Team Lead · 10+ Years
             </p>
             
-            <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary magnetic-btn">
-                    <span class="btn-text">Hire Me</span>
-                    <i data-lucide="arrow-right" class="btn-icon"></i>
+            <h1 class="hero-title">
+                <span class="reveal" data-reveal tabindex="-1">Osanda Wedamulla</span>
+            </h1>
+            
+            <p class="hero-role expose" data-reveal>
+                <span class="mono-label role-label">I architect &amp; lead</span>
+                <span class="typewriter" id="typewriter">distributed systems</span><span class="caret" aria-hidden="true"></span>
+            </p>
+            
+            <p class="hero-desc reveal" data-reveal>
+                High-throughput microservices, Kubernetes platforms, and engineering teams that ship.
+                Java · Spring Boot · Kafka · AWS/GCP — with 10K+ transactions per minute and 99.9% uptime behind them.
+            </p>
+            
+            <div class="hero-cta reveal" data-reveal>
+                <a href="#contact" class="btn btn-primary magnetic">
+                    Email Me
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </a>
-                <a href="#projects" class="btn btn-outline">
-                    <span class="btn-text">View Projects</span>
+                <a href="files/CV_Osanda_Wedamulla_2026.pdf" class="btn btn-ghost magnetic" download>
+                    Download CV
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 </a>
             </div>
             
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number" data-count="10">0</span>
-                    <span class="stat-suffix">+</span>
-                    <span class="stat-label">Years Exp.</span>
+            <!-- Metric ledger: the hero's centerpiece -->
+            <dl class="metrics reveal" data-reveal>
+                <div class="metric">
+                    <dt class="mono-label">Years</dt>
+                    <dd><span class="metric-num" data-count="10">0</span><span class="metric-suffix">+</span></dd>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="30">0</span>
-                    <span class="stat-suffix">+</span>
-                    <span class="stat-label">Projects</span>
+                <div class="metric" aria-hidden="true"></div>
+                <div class="metric">
+                    <dt class="mono-label">Txn / minute</dt>
+                    <dd><span class="metric-num" data-count="10" data-suffix="K">0</span><span class="metric-suffix">K+</span></dd>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="40">0</span>
-                    <span class="stat-suffix">+</span>
-                    <span class="stat-label">Clients</span>
+                <div class="metric" aria-hidden="true"></div>
+                <div class="metric">
+                    <dt class="mono-label">Uptime architected</dt>
+                    <dd><span class="metric-num" data-count="99.9" data-decimals="1">0</span><span class="metric-suffix">%</span></dd>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="10">0</span>
-                    <span class="stat-suffix">K+</span>
-                    <span class="stat-label">TPS Handled</span>
+                <div class="metric" aria-hidden="true"></div>
+                <div class="metric">
+                    <dt class="mono-label">Deploy time cut</dt>
+                    <dd><span class="metric-num" data-count="80">0</span><span class="metric-suffix">%</span></dd>
                 </div>
-            </div>
+            </dl>
         </div>
         
-        <div class="hero-scroll">
-            <div class="scroll-indicator">
-                <span class="scroll-text">Scroll</span>
-                <div class="scroll-arrow">
-                    <i data-lucide="chevron-down"></i>
-                </div>
-            </div>
-        </div>
-        
-        <div class="hero-gradient"></div>
+        <a href="#work" class="scroll-cue reveal" data-reveal aria-label="Scroll to track record">
+            <span class="mono-label">Scroll</span>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
     </section>
 
-    <!-- About Section -->
-    <section class="about section" id="about">
-        <div class="section-bg">
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
-        </div>
-        
+    <!-- ============ TRACK RECORD ============ -->
+    <section class="section work" id="work">
         <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">About Me</span>
-                <h2 class="section-title">Who I Am</h2>
-                <div class="section-line"></div>
-            </div>
+            <header class="section-header reveal" data-reveal>
+                <p class="mono-label section-kicker">Track Record</p>
+                <h2 class="section-title">Systems shipped. Teams led.</h2>
+            </header>
             
-            <div class="about-grid">
-                <div class="about-image-wrapper">
-                    <div class="about-image-container">
-                        <div class="image-frame"></div>
-                        <img src="images/bg_1.png" alt="Osanda Wedamulla" class="about-image">
-                        <div class="image-glow"></div>
-                    </div>
-                    <div class="experience-badge">
-                        <span class="exp-number">10+</span>
-                        <span class="exp-text">Years<br>Experience</span>
-                    </div>
-                </div>
-                
-                <div class="about-content">
-                    <h3 class="about-heading">
-                        Senior Full Stack Software Engineer & 
-                        <span class="highlight">Team Lead</span>
-                    </h3>
-                    
-                    <p class="about-text">
-                        I'm a passionate Lead Software Engineer/Architect with over 10 years of experience 
-                        designing, developing, and deploying enterprise-grade applications. I specialize in 
-                        microservices architecture, cloud-native solutions, DevOps automation, and AI/ML integration. 
-                        Proven track record in leading high-performance teams and delivering scalable systems handling 
-                        10K+ transactions per minute with 99.9% uptime.
+            <div class="work-intro reveal" data-reveal>
+                <img class="work-avatar" src="images/bg_1.jpg" alt="Osanda Wedamulla" width="96" height="96" loading="lazy">
+                <div>
+                    <p>Lead Software Engineer / Architect with over 10 years designing, deploying and operating
+                    enterprise-grade systems — microservices, cloud-native platforms, DevOps automation and AI/ML integration.</p>
+                    <p class="work-highlights">
+                        <span class="verified"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                        90% productivity gain via process automation</span>
+                        <span class="verified"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                        −80% deployment time with Kubernetes</span>
+                        <span class="verified"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                        +40% code quality through engineering practices</span>
                     </p>
-                    
-                    <div class="about-info">
-                        <div class="info-item">
-                            <i data-lucide="user" class="info-icon"></i>
-                            <div class="info-content">
-                                <span class="info-label">Name</span>
-                                <span class="info-value">Osanda Wedamulla</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i data-lucide="calendar" class="info-icon"></i>
-                            <div class="info-content">
-                                <span class="info-label">Birth</span>
-                                <span class="info-value">July, 1989</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i data-lucide="map-pin" class="info-icon"></i>
-                            <div class="info-content">
-                                <span class="info-label">Location</span>
-                                <span class="info-value">Colombo, Sri Lanka</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i data-lucide="mail" class="info-icon"></i>
-                            <div class="info-content">
-                                <span class="info-label">Email</span>
-                                <span class="info-value">osanda1989@gmail.com</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i data-lucide="phone" class="info-icon"></i>
-                            <div class="info-content">
-                                <span class="info-label">Phone</span>
-                                <span class="info-value">+94771544729</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i data-lucide="briefcase" class="info-icon"></i>
-                            <div class="info-content">
-                                <span class="info-label">Availability</span>
-                                <span class="info-value status-available">Open to Work</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="about-actions">
-                        <a href="files/CV_Osanda Wedamulla_2026.pdf" class="btn btn-primary" download>
-                            <i data-lucide="download" class="btn-icon"></i>
-                            <span class="btn-text">Download CV</span>
-                        </a>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/osandadileepa/" target="_blank" class="social-link" aria-label="LinkedIn">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                            </a>
-                            <a href="https://github.com/osandadileepa" target="_blank" class="social-link" aria-label="GitHub">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                            </a>
-                            <a href="https://x.com/osandadileepa" target="_blank" class="social-link" aria-label="X (Twitter)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Resume Section -->
-    <section class="resume section" id="resume">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">My Journey</span>
-                <h2 class="section-title">Resume</h2>
-                <div class="section-line"></div>
-            </div>
             
-            <div class="resume-intro">
-                <p class="resume-summary">
-                    Experienced <strong>Lead Software Engineer/Architect</strong> with over <strong>10 years</strong> 
-                    in the industry, specializing in scalable application development and system architecture. 
-                    Proven leader in optimizing software processes, automating operations, and delivering 
-                    high-performance enterprise solutions. Achieved <span class="highlight">90% productivity increase</span> 
-                    through automation, <span class="highlight">80% reduction in deployment time</span> with Kubernetes, 
-                    and <span class="highlight">40% improved code quality</span> through best practices implementation.
-                </p>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-line">
-                    <div class="timeline-progress"></div>
-                </div>
+            <div class="timeline" id="timeline">
+                <span class="timeline-line" aria-hidden="true"><span class="timeline-progress"></span></span>
                 
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="marker-dot"></div>
-                        <div class="marker-ring"></div>
-                    </div>
-                    <div class="timeline-card">
-                        <div class="card-header">
-                            <span class="card-date">2021 - Present</span>
-                            <span class="card-badge">Current</span>
+                <article class="entry" data-reveal>
+                    <span class="entry-tick" aria-hidden="true"></span>
+                    <div class="entry-card glow-card">
+                        <div class="entry-meta">
+                            <span class="mono-label">2021 — Now</span>
+                            <span class="chip chip-accent">Current</span>
                         </div>
-                        <h3 class="card-title">Senior Full Stack Developer - Team Lead</h3>
-                        <h4 class="card-company">V Fullstack GmbH (Remote)</h4>
-                        <p class="card-description">
-                            Architected high-throughput microservices ecosystem handling 10K+ transactions/minute 
-                            with 99.9% uptime. Led implementation of GitOps with ArgoCD, reducing deployment time 
-                            by 30%. Built Python FastAPI services for ML model deployment with 90% reduction in 
-                            inference time. Established comprehensive monitoring with Prometheus/Grafana achieving 
-                            90% faster incident response.
-                        </p>
-                        <div class="card-tags">
-                            <span class="tag">Spring Boot</span>
-                            <span class="tag">Kubernetes</span>
-                            <span class="tag">AWS/GCP</span>
-                            <span class="tag">ArgoCD</span>
-                            <span class="tag">Python/FastAPI</span>
-                            <span class="tag">AI/ML</span>
+                        <h3 class="entry-title">Senior Full Stack Developer — Team Lead</h3>
+                        <p class="entry-company">V Fullstack GmbH · Remote</p>
+                        <ul class="entry-bullets">
+                            <li>Architected microservices ecosystem handling <strong>10K+ transactions/minute</strong> at <strong>99.9% uptime</strong></li>
+                            <li>Cut deployment time <strong>−30%</strong> establishing GitOps with ArgoCD</li>
+                            <li>Built Python FastAPI ML services — <strong>−90% inference time</strong> for model deployment</li>
+                            <li>Prometheus/Grafana observability stack → <strong>90% faster incident response</strong></li>
+                        </ul>
+                        <div class="chips">
+                            <span class="chip">Spring Boot</span><span class="chip">Kubernetes</span><span class="chip">AWS/GCP</span><span class="chip">ArgoCD</span><span class="chip">Python/FastAPI</span><span class="chip">AI/ML</span>
                         </div>
                     </div>
-                </div>
+                </article>
                 
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="marker-dot"></div>
-                        <div class="marker-ring"></div>
-                    </div>
-                    <div class="timeline-card">
-                        <div class="card-header">
-                            <span class="card-date">2015 - 2021</span>
+                <article class="entry" data-reveal>
+                    <span class="entry-tick" aria-hidden="true"></span>
+                    <div class="entry-card glow-card">
+                        <div class="entry-meta">
+                            <span class="mono-label">2015 — 2021</span>
                         </div>
-                        <h3 class="card-title">Software Engineer / Sr. Software Engineer</h3>
-                        <h4 class="card-company">Remote Sensing Metrics Asia (Pvt) Ltd</h4>
-                        <p class="card-description">
-                            Architected and developed enterprise geospatial applications with Spring Boot, 
-                            Angular, and PostgreSQL. Implemented centralized authentication with Keycloak 
-                            and OAuth2. Integrated Apache Kafka and RabbitMQ for real-time data processing. 
-                            Led cloud migration to AWS with Kubernetes container orchestration, reducing 
-                            deployment time by 80% and technical debt by 60%.
-                        </p>
-                        <div class="card-tags">
-                            <span class="tag">Java/Spring</span>
-                            <span class="tag">Angular</span>
-                            <span class="tag">Kafka</span>
-                            <span class="tag">Keycloak</span>
-                            <span class="tag">AWS</span>
-                            <span class="tag">Kubernetes</span>
+                        <h3 class="entry-title">Software Engineer → Sr. Software Engineer</h3>
+                        <p class="entry-company">Remote Sensing Metrics Asia (Pvt) Ltd</p>
+                        <ul class="entry-bullets">
+                            <li>Architected enterprise geospatial applications — Spring Boot, Angular, PostgreSQL</li>
+                            <li>Centralized authentication with Keycloak &amp; OAuth2 across the platform</li>
+                            <li>Kafka + RabbitMQ pipelines for <strong>real-time data processing</strong></li>
+                            <li>Led AWS migration — <strong>−80% deployment time</strong>, <strong>−60% technical debt</strong></li>
+                        </ul>
+                        <div class="chips">
+                            <span class="chip">Java/Spring</span><span class="chip">Angular</span><span class="chip">Kafka</span><span class="chip">Keycloak</span><span class="chip">AWS</span><span class="chip">Kubernetes</span>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
             
-            <div class="resume-cta">
-                <a href="files/CV_Osanda Wedamulla_2026.pdf" class="btn btn-primary btn-large" download>
-                    <i data-lucide="file-text" class="btn-icon"></i>
-                    <span class="btn-text">Download Full Resume</span>
+            <div class="work-cta reveal" data-reveal>
+                <a href="files/CV_Osanda_Wedamulla_2026.pdf" class="btn btn-outline" download>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                    Full Resume (PDF)
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services section" id="services">
-        <div class="section-bg">
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-        </div>
-        
+    <!-- ============ SYSTEMS ============ -->
+    <section class="section systems" id="systems">
         <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">What I Do</span>
-                <h2 class="section-title">Services</h2>
-                <div class="section-line"></div>
-            </div>
+            <header class="section-header reveal" data-reveal>
+                <p class="mono-label section-kicker">Systems</p>
+                <h2 class="section-title">What I work with.</h2>
+            </header>
             
-            <div class="services-grid">
-                <div class="service-card" data-tilt>
-                    <div class="card-border"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i data-lucide="layers"></i>
-                        </div>
-                        <h3 class="card-title">Backend Architecture & Design</h3>
-                        <p class="card-description">
-                            Architecting high-throughput microservices ecosystems handling 10K+ transactions/minute 
-                            with 99.9% uptime. Expert in Spring Boot, Kafka, and event-driven patterns with 
-                            domain-driven design principles.
-                        </p>
-                        <ul class="card-features">
-                            <li><i data-lucide="check"></i>Microservices Architecture (Spring Boot/Cloud)</li>
-                            <li><i data-lucide="check"></i>Event-Driven Systems (Kafka/RabbitMQ)</li>
-                            <li><i data-lucide="check"></i>High-Performance API Design (REST/GraphQL)</li>
-                        </ul>
-                    </div>
+            <div class="systems-board glow-card reveal" data-reveal>
+                <div class="systems-row">
+                    <h3 class="mono-label">Languages</h3>
+                    <div class="chips"><span class="chip">Java</span><span class="chip">Kotlin</span><span class="chip">Python</span><span class="chip">Golang</span><span class="chip">TypeScript</span></div>
                 </div>
-                
-                <div class="service-card" data-tilt>
-                    <div class="card-border"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i data-lucide="code-2"></i>
-                        </div>
-                        <h3 class="card-title">API Development</h3>
-                        <p class="card-description">
-                            Building robust RESTful and GraphQL APIs with comprehensive documentation, 
-                            versioning strategies, and security best practices.
-                        </p>
-                        <ul class="card-features">
-                            <li><i data-lucide="check"></i>RESTful APIs</li>
-                            <li><i data-lucide="check"></i>GraphQL</li>
-                            <li><i data-lucide="check"></i>API Gateway</li>
-                        </ul>
-                    </div>
+                <div class="systems-row">
+                    <h3 class="mono-label">Backend</h3>
+                    <div class="chips"><span class="chip">Spring Boot</span><span class="chip">Spring Cloud</span><span class="chip">Kafka</span><span class="chip">RabbitMQ</span><span class="chip">REST / GraphQL</span><span class="chip">Microservices</span></div>
                 </div>
-                
-                <div class="service-card" data-tilt>
-                    <div class="card-border"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i data-lucide="globe"></i>
-                        </div>
-                        <h3 class="card-title">Web Application Development</h3>
-                        <p class="card-description">
-                            Full-stack development of modern web applications with responsive design, 
-                            progressive enhancement, and optimal performance.
-                        </p>
-                        <ul class="card-features">
-                            <li><i data-lucide="check"></i>Full-Stack Development</li>
-                            <li><i data-lucide="check"></i>Responsive Design</li>
-                            <li><i data-lucide="check"></i>PWA Development</li>
-                        </ul>
-                    </div>
+                <div class="systems-row">
+                    <h3 class="mono-label">Data</h3>
+                    <div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">Redis</span><span class="chip">MongoDB</span><span class="chip">Elasticsearch</span><span class="chip">Cassandra</span></div>
                 </div>
-                
-                <div class="service-card" data-tilt>
-                    <div class="card-border"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i data-lucide="cloud"></i>
-                        </div>
-                        <h3 class="card-title">DevOps & Cloud Infrastructure</h3>
-                        <p class="card-description">
-                            End-to-end DevOps automation with Kubernetes, GitOps (ArgoCD), and CI/CD pipelines. 
-                            Reduced deployment time by 80% through Docker containerization and zero-downtime deployments 
-                            on AWS/GCP with 40% cost optimization.
-                        </p>
-                        <ul class="card-features">
-                            <li><i data-lucide="check"></i>Kubernetes (EKS/GKE) & Helm Charts</li>
-                            <li><i data-lucide="check"></i>GitOps with ArgoCD & GitHub/GitLab CI</li>
-                            <li><i data-lucide="check"></i>Infrastructure as Code (Terraform/Ansible)</li>
-                        </ul>
-                    </div>
+                <div class="systems-row">
+                    <h3 class="mono-label">Cloud &amp; DevOps</h3>
+                    <div class="chips"><span class="chip">Kubernetes / Helm</span><span class="chip">Docker</span><span class="chip">AWS</span><span class="chip">GCP</span><span class="chip">Azure</span><span class="chip">Terraform</span><span class="chip">Ansible</span><span class="chip">ArgoCD</span><span class="chip">GitHub Actions</span></div>
                 </div>
-                
-                <div class="service-card" data-tilt>
-                    <div class="card-border"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i data-lucide="activity"></i>
-                        </div>
-                        <h3 class="card-title">Observability & Security</h3>
-                        <p class="card-description">
-                            Comprehensive monitoring with Prometheus, Grafana, and ELK stack achieving 90% faster 
-                            incident response. Implemented multi-tenant auth with Keycloak, OAuth2, JWT, and 
-                            HashiCorp Vault for enterprise security.
-                        </p>
-                        <ul class="card-features">
-                            <li><i data-lucide="check"></i>Monitoring (Prometheus/Grafana/ELK)</li>
-                            <li><i data-lucide="check"></i>Security (OAuth2/JWT/Vault/Keycloak)</li>
-                            <li><i data-lucide="check"></i>Service Mesh (ISTIO/Linkerd)</li>
-                        </ul>
-                    </div>
+                <div class="systems-row">
+                    <h3 class="mono-label">Observability &amp; Security</h3>
+                    <div class="chips"><span class="chip">Prometheus</span><span class="chip">Grafana</span><span class="chip">ELK</span><span class="chip">DataDog</span><span class="chip">New Relic</span><span class="chip">Keycloak</span><span class="chip">Vault</span><span class="chip">Istio</span></div>
                 </div>
-                
-                <div class="service-card" data-tilt>
-                    <div class="card-border"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i data-lucide="brain-circuit"></i>
-                        </div>
-                        <h3 class="card-title">AI/ML Integration</h3>
-                        <p class="card-description">
-                            Building Python FastAPI services for ML model deployment with 90% reduction in inference 
-                            time. Expert in AI agents, prompt engineering, and integrating ML capabilities into 
-                            existing microservices ecosystems.
-                        </p>
-                        <ul class="card-features">
-                            <li><i data-lucide="check"></i>ML Model Deployment (FastAPI/Python)</li>
-                            <li><i data-lucide="check"></i>AI Agents & Prompt Engineering</li>
-                            <li><i data-lucide="check"></i>Microservices AI Integration</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="service-card" data-tilt>
-                    <div class="card-border"></div>
-                    <div class="card-content">
-                        <div class="card-icon">
-                            <i data-lucide="settings"></i>
-                        </div>
-                        <h3 class="card-title">Product Development</h3>
-                        <p class="card-description">
-                            End-to-end product development from ideation to deployment, with agile 
-                            methodologies and continuous delivery practices.
-                        </p>
-                        <ul class="card-features">
-                            <li><i data-lucide="check"></i>Agile Development</li>
-                            <li><i data-lucide="check"></i>CI/CD Pipelines</li>
-                            <li><i data-lucide="check"></i>DevOps</li>
-                        </ul>
-                    </div>
+                <div class="systems-row">
+                    <h3 class="mono-label">AI &amp; Web</h3>
+                    <div class="chips"><span class="chip">Python / FastAPI</span><span class="chip">AI Agents</span><span class="chip">Prompt Engineering</span><span class="chip">Angular</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills section" id="skills">
+    <!-- ============ PROJECTS ============ -->
+    <section class="section projects" id="projects">
         <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">My Expertise</span>
-                <h2 class="section-title">Skills & Technologies</h2>
-                <div class="section-line"></div>
+            <header class="section-header reveal" data-reveal>
+                <p class="mono-label section-kicker">Selected Work</p>
+                <h2 class="section-title">Systems I'd show you on a whiteboard.</h2>
+            </header>
+            
+            <div class="filter reveal" data-reveal role="group" aria-label="Filter projects">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                <button class="filter-btn" data-filter="web" aria-pressed="false">Web Platforms</button>
+                <button class="filter-btn" data-filter="cloud" aria-pressed="false">Cloud</button>
+                <button class="filter-btn" data-filter="system" aria-pressed="false">System Design</button>
             </div>
             
-            <div class="skills-layout">
-                <div class="skills-main">
-                    <h3 class="skills-category">Core Technologies</h3>
-                    
-                    <div class="skill-bars">
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Java</span>
-                                <span class="skill-percent" data-value="95">0%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="95"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Spring Boot</span>
-                                <span class="skill-percent" data-value="90">0%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">MySQL / PostgreSQL</span>
-                                <span class="skill-percent" data-value="90">0%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Docker / Kubernetes</span>
-                                <span class="skill-percent" data-value="90">0%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Angular</span>
-                                <span class="skill-percent" data-value="80">0%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="80"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Python / FastAPI</span>
-                                <span class="skill-percent" data-value="85">0%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Kubernetes / Helm</span>
-                                <span class="skill-percent" data-value="90">0%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="90"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">AWS / GCP / Azure</span>
-                                <span class="skill-percent" data-value="85">0%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Kafka / RabbitMQ</span>
-                                <span class="skill-percent" data-value="85">0%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-width="85"></div>
-                            </div>
-                        </div>
+            <div class="projects-grid" id="projects-grid">
+                <article class="project glow-card reveal" data-reveal data-category="system">
+                    <div class="project-media"><img src="images/project-5.jpg" alt="Data Analytics Platform — architecture" loading="lazy" width="600" height="400"></div>
+                    <div class="project-body">
+                        <p class="mono-label project-cat">System Design</p>
+                        <h3 class="project-title">Data Analytics Platform</h3>
+                        <p class="project-desc">Streaming ingestion with Kafka into Elasticsearch — dashboards over millions of events in near real time.</p>
+                        <div class="chips"><span class="chip">Microservices</span><span class="chip">Kafka</span><span class="chip">Elasticsearch</span></div>
                     </div>
-                </div>
+                </article>
                 
-                <div class="skills-tech">
-                    <h3 class="skills-category">Tech Stack</h3>
-                    
-                    <div class="tech-grid">
-                        <div class="tech-card">
-                            <i data-lucide="coffee" class="tech-icon"></i>
-                            <span class="tech-name">Java</span>
-                        </div>
-                        <div class="tech-card">
-                            <i data-lucide="leaf" class="tech-icon"></i>
-                            <span class="tech-name">Spring</span>
-                        </div>
-                        <div class="tech-card">
-                            <i data-lucide="database" class="tech-icon"></i>
-                            <span class="tech-name">PostgreSQL</span>
-                        </div>
-                        <div class="tech-card">
-                            <i data-lucide="container" class="tech-icon"></i>
-                            <span class="tech-name">Docker</span>
-                        </div>
-                        <div class="tech-card">
-                            <i data-lucide="cloud" class="tech-icon"></i>
-                            <span class="tech-name">AWS/GCP</span>
-                        </div>
-                        <div class="tech-card">
-                            <i data-lucide="git-branch" class="tech-icon"></i>
-                            <span class="tech-name">Git/GitOps</span>
-                        </div>
-                        <div class="tech-card">
-                            <i data-lucide="layout" class="tech-icon"></i>
-                            <span class="tech-name">Angular</span>
-                        </div>
-                        <div class="tech-card">
-                            <i data-lucide="server" class="tech-icon"></i>
-                            <span class="tech-name">Kubernetes</span>
-                        </div>
-                        <div class="tech-card">
-                            <i data-lucide="workflow" class="tech-icon"></i>
-                            <span class="tech-name">Kafka</span>
-                        </div>
-                        <div class="tech-card">
-                            <i data-lucide="code" class="tech-icon"></i>
-                            <span class="tech-name">Python</span>
-                        </div>
-                        <div class="tech-card">
-                            <i data-lucide="shield" class="tech-icon"></i>
-                            <span class="tech-name">Keycloak</span>
-                        </div>
-                        <div class="tech-card">
-                            <i data-lucide="activity" class="tech-icon"></i>
-                            <span class="tech-name">Prometheus</span>
-                        </div>
+                <article class="project glow-card reveal" data-reveal data-category="system">
+                    <div class="project-media"><img src="images/project-3.jpg" alt="Crypto Trading System — event pipeline" loading="lazy" width="600" height="400"></div>
+                    <div class="project-body">
+                        <p class="mono-label project-cat">High Availability</p>
+                        <h3 class="project-title">Crypto Trading System</h3>
+                        <p class="project-desc">WebSocket feeds into event-driven microservices — consistent trade state under sustained market load.</p>
+                        <div class="chips"><span class="chip">Microservices</span><span class="chip">WebSocket</span><span class="chip">Kafka</span></div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="skills-cloud">
-                <h3 class="skills-category">Additional Technologies</h3>
-                <div class="cloud-tags">
-                    <span class="cloud-tag">Microservices</span>
-                    <span class="cloud-tag">Spring Cloud</span>
-                    <span class="cloud-tag">REST APIs</span>
-                    <span class="cloud-tag">GraphQL</span>
-                    <span class="cloud-tag">Kafka</span>
-                    <span class="cloud-tag">RabbitMQ</span>
-                    <span class="cloud-tag">Redis</span>
-                    <span class="cloud-tag">MongoDB</span>
-                    <span class="cloud-tag">Elasticsearch</span>
-                    <span class="cloud-tag">Cassandra</span>
-                    <span class="cloud-tag">GitHub Actions</span>
-                    <span class="cloud-tag">GitLab CI</span>
-                    <span class="cloud-tag">ArgoCD</span>
-                    <span class="cloud-tag">Terraform</span>
-                    <span class="cloud-tag">Ansible</span>
-                    <span class="cloud-tag">Helm</span>
-                    <span class="cloud-tag">ISTIO</span>
-                    <span class="cloud-tag">Linkerd</span>
-                    <span class="cloud-tag">Vault</span>
-                    <span class="cloud-tag">Keycloak</span>
-                    <span class="cloud-tag">Prometheus</span>
-                    <span class="cloud-tag">Grafana</span>
-                    <span class="cloud-tag">ELK Stack</span>
-                    <span class="cloud-tag">DataDog</span>
-                    <span class="cloud-tag">NewRelic</span>
-                    <span class="cloud-tag">Golang</span>
-                    <span class="cloud-tag">Kotlin</span>
-                    <span class="cloud-tag">Python</span>
-                    <span class="cloud-tag">FastAPI</span>
-                    <span class="cloud-tag">AI Agents</span>
-                    <span class="cloud-tag">Prompt Engineering</span>
-                </div>
+                </article>
+                
+                <article class="project glow-card reveal" data-reveal data-category="cloud">
+                    <div class="project-media"><img src="images/project-1.jpg" alt="Infrastructure provisioning pipeline" loading="lazy" width="600" height="400"></div>
+                    <div class="project-body">
+                        <p class="mono-label project-cat">Cloud Services</p>
+                        <h3 class="project-title">Infrastructure Provisioning</h3>
+                        <p class="project-desc">Repeatable, auditable environments via Terraform + Ansible — from ticket to running stack in minutes.</p>
+                        <div class="chips"><span class="chip">AWS</span><span class="chip">Terraform</span><span class="chip">Ansible</span></div>
+                    </div>
+                </article>
+                
+                <article class="project glow-card reveal" data-reveal data-category="web">
+                    <div class="project-media"><img src="images/project-2.jpg" alt="Financial services platform" loading="lazy" width="600" height="400"></div>
+                    <div class="project-body">
+                        <p class="mono-label project-cat">Performance</p>
+                        <h3 class="project-title">Financial Services Platform</h3>
+                        <p class="project-desc">Caching and query architecture on Spring Boot + Redis + PostgreSQL for low-latency financial workloads.</p>
+                        <div class="chips"><span class="chip">Spring Boot</span><span class="chip">Redis</span><span class="chip">PostgreSQL</span></div>
+                    </div>
+                </article>
+                
+                <article class="project glow-card reveal" data-reveal data-category="web">
+                    <div class="project-media"><img src="images/project-4.jpg" alt="E-commerce application" loading="lazy" width="600" height="400"></div>
+                    <div class="project-body">
+                        <p class="mono-label project-cat">Web Platforms</p>
+                        <h3 class="project-title">E-Commerce Applications</h3>
+                        <p class="project-desc">Catalog, cart and order flows on Spring Boot + Angular — hardened for peak-traffic campaigns.</p>
+                        <div class="chips"><span class="chip">Spring Boot</span><span class="chip">Angular</span><span class="chip">MySQL</span></div>
+                    </div>
+                </article>
+                
+                <article class="project glow-card reveal" data-reveal data-category="system">
+                    <div class="project-media"><img src="images/project-6.jpg" alt="Supply chain management platform" loading="lazy" width="600" height="400"></div>
+                    <div class="project-body">
+                        <p class="mono-label project-cat">Product Architecture</p>
+                        <h3 class="project-title">Supply Chain Management</h3>
+                        <p class="project-desc">Domain-driven services with Spring Cloud on Kubernetes — inventory, logistics and tracking as independent systems.</p>
+                        <div class="chips"><span class="chip">Java</span><span class="chip">Spring Cloud</span><span class="chip">Kubernetes</span></div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="projects section" id="projects">
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
         <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Portfolio</span>
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="section-line"></div>
-            </div>
-            
-            <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web Dev</button>
-                <button class="filter-btn" data-filter="cloud">Cloud</button>
-                <button class="filter-btn" data-filter="system">System Design</button>
-            </div>
-            
-            <div class="projects-grid">
-                <div class="project-card" data-category="web">
-                    <div class="project-image">
-                        <img src="images/project-4.jpg" alt="E-Commerce Applications">
-                        <div class="project-overlay">
-                            <div class="project-content">
-                                <h3 class="project-title">E-Commerce Applications</h3>
-                                <p class="project-category">Web Development</p>
-                                <div class="project-tags">
-                                    <span>Spring Boot</span>
-                                    <span>Angular</span>
-                                    <span>MySQL</span>
-                                </div>
-                                <a href="#" class="project-link">
-                                    <i data-lucide="external-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card" data-category="system">
-                    <div class="project-image">
-                        <img src="images/project-5.jpg" alt="Data Analytics Platform">
-                        <div class="project-overlay">
-                            <div class="project-content">
-                                <h3 class="project-title">Data Analytics Platform</h3>
-                                <p class="project-category">System Design</p>
-                                <div class="project-tags">
-                                    <span>Microservices</span>
-                                    <span>Kafka</span>
-                                    <span>Elasticsearch</span>
-                                </div>
-                                <a href="#" class="project-link">
-                                    <i data-lucide="external-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card" data-category="cloud">
-                    <div class="project-image">
-                        <img src="images/project-1.jpg" alt="Infrastructure Provisioning">
-                        <div class="project-overlay">
-                            <div class="project-content">
-                                <h3 class="project-title">Infrastructure Provisioning</h3>
-                                <p class="project-category">Cloud Services</p>
-                                <div class="project-tags">
-                                    <span>AWS</span>
-                                    <span>Terraform</span>
-                                    <span>Ansible</span>
-                                </div>
-                                <a href="#" class="project-link">
-                                    <i data-lucide="external-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card" data-category="system">
-                    <div class="project-image">
-                        <img src="images/project-6.jpg" alt="Supply Chain Management">
-                        <div class="project-overlay">
-                            <div class="project-content">
-                                <h3 class="project-title">Supply Chain Management</h3>
-                                <p class="project-category">Product Architecting</p>
-                                <div class="project-tags">
-                                    <span>Java</span>
-                                    <span>Spring Cloud</span>
-                                    <span>Kubernetes</span>
-                                </div>
-                                <a href="#" class="project-link">
-                                    <i data-lucide="external-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card" data-category="web">
-                    <div class="project-image">
-                        <img src="images/project-2.jpg" alt="Financial Services Platform">
-                        <div class="project-overlay">
-                            <div class="project-content">
-                                <h3 class="project-title">Financial Services Platform</h3>
-                                <p class="project-category">Performance Optimization</p>
-                                <div class="project-tags">
-                                    <span>Spring Boot</span>
-                                    <span>Redis</span>
-                                    <span>PostgreSQL</span>
-                                </div>
-                                <a href="#" class="project-link">
-                                    <i data-lucide="external-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card" data-category="system">
-                    <div class="project-image">
-                        <img src="images/project-3.jpg" alt="Crypto Trading System">
-                        <div class="project-overlay">
-                            <div class="project-content">
-                                <h3 class="project-title">Crypto Trading System</h3>
-                                <p class="project-category">High Availability</p>
-                                <div class="project-tags">
-                                    <span>Microservices</span>
-                                    <span>WebSocket</span>
-                                    <span>Kafka</span>
-                                </div>
-                                <a href="#" class="project-link">
-                                    <i data-lucide="external-link"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats section" id="stats">
-        <div class="stats-bg">
-            <div class="stats-overlay"></div>
-        </div>
-        
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <div class="stat-icon">
-                        <i data-lucide="award"></i>
-                    </div>
-                    <span class="stat-number-large" data-count="10">0</span>
-                    <span class="stat-label-large">Awards Won</span>
-                </div>
-                
-                <div class="stat-box">
-                    <div class="stat-icon">
-                        <i data-lucide="check-circle"></i>
-                    </div>
-                    <span class="stat-number-large" data-count="30">0</span>
-                    <span class="stat-label-large">Projects Done</span>
-                </div>
-                
-                <div class="stat-box">
-                    <div class="stat-icon">
-                        <i data-lucide="users"></i>
-                    </div>
-                    <span class="stat-number-large" data-count="40">0</span>
-                    <span class="stat-label-large">Happy Clients</span>
-                </div>
-                
-                <div class="stat-box">
-                    <div class="stat-icon">
-                        <i data-lucide="coffee"></i>
-                    </div>
-                    <span class="stat-number-large" data-count="500">0</span>
-                    <span class="stat-label-large">Cups of Coffee</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact section" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">Get In Touch</span>
-                <h2 class="section-title">Contact Me</h2>
-                <div class="section-line"></div>
-            </div>
+            <header class="section-header reveal" data-reveal>
+                <p class="mono-label section-kicker">Contact</p>
+                <h2 class="section-title">The fastest way to reach me is email.</h2>
+            </header>
             
             <div class="contact-grid">
-                <div class="contact-info">
-                    <h3 class="contact-heading">Let's work together</h3>
-                    <p class="contact-description">
-                        Have a project in mind or want to discuss opportunities? 
-                        I'm always open to new challenges and collaborations.
-                    </p>
+                <div class="contact-panel reveal" data-reveal>
+                    <p>I reply within 24 hours. Recruiters: the CV above has the details — emails about a concrete problem move fastest.</p>
                     
-                    <div class="contact-cards">
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i data-lucide="map-pin"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Location</span>
-                                <span class="contact-value">Colombo, Sri Lanka</span>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i data-lucide="phone"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Phone</span>
-                                <span class="contact-value">+94 771 544 729</span>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i data-lucide="mail"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Email</span>
-                                <span class="contact-value">osanda1989@gmail.com</span>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i data-lucide="globe"></i>
-                            </div>
-                            <div class="contact-details">
-                                <span class="contact-label">Website</span>
-                                <span class="contact-value">osandadileepa.github.io</span>
-                            </div>
-                        </div>
-                    </div>
+                    <a class="email-row magnetic" href="mailto:osanda1989@gmail.com">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+                        <span class="email-text">osanda1989@gmail.com</span>
+                    </a>
+                    <button class="email-copy" id="email-copy" data-email="osanda1989@gmail.com" aria-label="Copy email address">
+                        <svg class="icon icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="14" height="14" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                        <svg class="icon icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                        <span class="copy-label mono-label">Copy email</span>
+                    </button>
                     
-                    <div class="contact-social">
-                        <span class="social-label">Follow me:</span>
-                        <div class="social-links-large">
-                            <a href="https://www.linkedin.com/in/osandadileepa/" target="_blank" class="social-link-large" aria-label="LinkedIn">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                            </a>
-                            <a href="https://github.com/osandadileepa" target="_blank" class="social-link-large" aria-label="GitHub">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                            </a>
-                            <a href="https://x.com/osandadileepa" target="_blank" class="social-link-large" aria-label="X (Twitter)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
-                            </a>
+                    <dl class="contact-facts">
+                        <div><dt class="mono-label">Location</dt><dd>Colombo, Sri Lanka · Remote-friendly</dd></div>
+                        <div><dt class="mono-label">Phone</dt><dd><a href="tel:+94771544729">+94 771 544 729</a></dd></div>
+                        <div><dt class="mono-label">Elsewhere</dt>
+                            <dd class="socials">
+                                <a href="https://www.linkedin.com/in/osandadileepa/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                                </a>
+                                <a href="https://github.com/osandadileepa" target="_blank" rel="noopener" aria-label="GitHub">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                                </a>
+                                <a href="https://x.com/osandadileepa" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+                                </a>
+                            </dd>
                         </div>
-                    </div>
+                    </dl>
                 </div>
                 
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="text" id="name" name="name" required placeholder=" ">
-                                <label for="name">Your Name</label>
-                                <div class="form-line"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" id="email" name="email" required placeholder=" ">
-                                <label for="email">Your Email</label>
-                                <div class="form-line"></div>
-                            </div>
+                <form class="contact-form glow-card reveal" id="contact-form" data-reveal novalidate>
+                    <p class="mono-label form-note">Opens your email app — no server in between.</p>
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="f-name">Your name</label>
+                            <input type="text" id="f-name" name="name" required autocomplete="name">
                         </div>
-                        
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" required placeholder=" ">
-                            <label for="subject">Subject</label>
-                            <div class="form-line"></div>
+                        <div class="field">
+                            <label for="f-email">Your email</label>
+                            <input type="email" id="f-email" name="email" required autocomplete="email">
                         </div>
-                        
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
-                            <label for="message">Your Message</label>
-                            <div class="form-line"></div>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-large btn-submit magnetic-btn">
-                            <span class="btn-text">Send Message</span>
-                            <i data-lucide="send" class="btn-icon"></i>
-                        </button>
-                    </form>
-                </div>
+                    </div>
+                    <div class="field">
+                        <label for="f-subject">Subject</label>
+                        <input type="text" id="f-subject" name="subject" required>
+                    </div>
+                    <div class="field">
+                        <label for="f-message">Message</label>
+                        <textarea id="f-message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-wide">
+                        Compose Email
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+                    </button>
+                </form>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" class="footer-logo">
-                        <span class="logo-bracket">&lt;</span>
-                        <span class="logo-text">Osanda</span>
-                        <span class="logo-bracket">/&gt;</span>
-                    </a>
-                    <p class="footer-about">
-                        Senior Full Stack Software Engineer & Team Lead specializing in 
-                        microservices architecture, cloud-native solutions, and DevOps practices.
-                    </p>
-                    <div class="footer-social">
-                        <a href="https://www.linkedin.com/in/osandadileepa/" target="_blank" aria-label="LinkedIn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-                        </a>
-                        <a href="https://github.com/osandadileepa" target="_blank" aria-label="GitHub">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                        </a>
-                        <a href="https://x.com/osandadileepa" target="_blank" aria-label="X (Twitter)">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h4 class="footer-title">Quick Links</h4>
-                    <ul class="footer-list">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4 class="footer-title">Services</h4>
-                    <ul class="footer-list">
-                        <li><a href="#services">System Design</a></li>
-                        <li><a href="#services">Web Development</a></li>
-                        <li><a href="#services">Cloud Services</a></li>
-                        <li><a href="#services">API Development</a></li>
-                        <li><a href="#services">DevOps</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h4 class="footer-title">Contact Info</h4>
-                    <ul class="footer-list">
-                        <li>
-                            <i data-lucide="map-pin"></i>
-                            <span>Colombo, Sri Lanka</span>
-                        </li>
-                        <li>
-                            <i data-lucide="phone"></i>
-                            <span>+94 771 544 729</span>
-                        </li>
-                        <li>
-                            <i data-lucide="mail"></i>
-                            <span>osanda1989@gmail.com</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p class="copyright">
-                    &copy; <span id="current-year">2026</span> Osanda Wedamulla. All rights reserved.
-                </p>
-                <p class="credits">
-                    Designed & Built with <i data-lucide="heart" class="heart-icon"></i>
-                </p>
-            </div>
+        <div class="container footer-row">
+            <a href="#top" class="nav-logo" aria-label="Back to top">
+                <span class="logo-bracket">&lt;</span><span class="logo-text">Osanda</span><span class="logo-bracket">/&gt;</span>
+            </a>
+            <p class="mono-label footer-note">© <span id="year">2026</span> Osanda Wedamulla </p>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-        <i data-lucide="arrow-up"></i>
-    </button>
-
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

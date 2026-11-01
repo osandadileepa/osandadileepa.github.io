@@ -1,7 +1,13 @@
-### Example user template template
-### Example user template
+### OpenCode tooling (agent config + skills) — not site content
+.opencode/
 
-# IntelliJ project files
+### Design-system working docs (kept locally, not published)
+design-system/
+
+### macOS
+.DS_Store
+
+### IntelliJ project files
 .idea
 *.iml
 out

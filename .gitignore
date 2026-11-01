@@ -12,3 +12,4 @@ design-system/
 *.iml
 out
 gen
+.commandcode/
